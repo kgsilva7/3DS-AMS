@@ -1,36 +1,21 @@
 Botão Logcat
-Um guia prático de arquitetura Android utilizando Jetpack Compose e Material 3 para monitoramento de diagnóstico em tempo real.
 
-Sobre o Projeto
-O Botão Logcat é um aplicativo educacional desenvolvido na ETEC Zona Leste. O objetivo principal é demonstrar a desconstrução das camadas de um app moderno, focando na integração entre uma interface declarativa e a lógica de registro de eventos (diagnóstico) através do console Logcat.
+Um guia prático voltado à arquitetura Android que utiliza Jetpack Compose e Material 3 para realizar o acompanhamento de diagnósticos em tempo real.
 
-Funcionalidades principais
-Interface Semântica: Quatro botões interativos (ElevatedButton) com cores que representam diferentes estados do sistema.
+Descrição do projeto
+O Botão Logcat é um aplicativo com finalidade educacional, desenvolvido na ETEC Zona Leste. Sua proposta é evidenciar, de forma didática, a separação e integração das camadas de um aplicativo moderno, destacando a relação entre uma interface declarativa e o registro de eventos de diagnóstico por meio do Logcat.
 
-Monitoramento em Tempo Real: Cada botão aciona uma severidade de diagnóstico diferente (Debug, Info, Warning e Error) no console.
+Principais funcionalidades
+A interface é composta por quatro botões interativos do tipo ElevatedButton, cada um associado a um estado específico do sistema, representado por cores distintas.
+Cada botão dispara um nível diferente de log no console (Debug, Info, Warning e Error), permitindo o acompanhamento em tempo real do comportamento da aplicação.
+O projeto também inclui tratamento de exceções, utilizando blocos try-catch para capturar falhas críticas, como RuntimeException, evitando que o aplicativo seja encerrado inesperadamente.
+Além disso, emprega o recurso @Preview, possibilitando a visualização e teste de componentes diretamente no Android Studio, sem necessidade de execução completa do app.
 
-Tratamento de Exceções: Demonstração de resiliência através de um bloco try-catch que captura falhas críticas (como RuntimeException) sem derrubar o app.
+Tecnologias empregadas
+A aplicação foi desenvolvida em Kotlin, utilizando o Jetpack Compose como framework de interface declarativa. O design segue as diretrizes do Material 3, garantindo consistência visual por meio de cores e tipografia padronizadas. O gerenciamento de dependências é feito com Gradle (Kotlin DSL), e o monitoramento de eventos utiliza o Logcat, via API de logs do Android.
 
-Desenvolvimento Ágil: Uso de @Preview para visualização e isolamento de componentes em tempo real no Android Studio.
-
-Tecnologias utilizadas
-Linguagem: Kotlin
-
-UI Framework: Jetpack Compose (Interface Declarativa)
-
-Design System: Material 3 (Cores semânticas e Tipografia padronizada)
-
-Gerenciador de Dependências: Gradle (Kotlin DSL)
-
-Ferramentas de Diagnóstico: Logcat (Log API do Android)
-
-Arquitetura e Camadas
-O projeto é estruturado em módulos claros para garantir escalabilidade:
-
-Configuração: Ajustes de SDK (minSdk 24 / targetSdk 33) e habilitação do Compose no Gradle.
-
-Sistema de Design: Definição de paleta de cores customizada em Color.kt e tipografia em Type.kt.
-
-Interface (UI): Componentes reutilizáveis como a função ActionButton, que encapsula a lógica visual dos botões.
-
-Lógica de Registro: Implementação dos métodos Log.d, Log.i, Log.w e Log.e para comunicação com o desenvolvedor.
+Arquitetura e organização
+O projeto está estruturado em camadas bem definidas para facilitar manutenção e escalabilidade. A configuração inclui ajustes de SDK (mínimo 24 e alvo 33) e ativação do Compose no Gradle.
+O sistema de design contempla a criação de uma paleta de cores personalizada (Color.kt) e definições tipográficas (Type.kt).
+Na camada de interface, são utilizados componentes reutilizáveis, como a função ActionButton, responsável por encapsular a aparência e comportamento dos botões.
+Por fim, a camada de lógica de registro implementa chamadas como Log.d, Log.i, Log.w e Log.e, permitindo a comunicação direta com o desenvolvedor durante a execução do aplicativo.
