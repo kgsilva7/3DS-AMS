@@ -19,3 +19,4 @@ O projeto está estruturado em camadas bem definidas para facilitar manutenção
 O sistema de design contempla a criação de uma paleta de cores personalizada (Color.kt) e definições tipográficas (Type.kt).
 Na camada de interface, são utilizados componentes reutilizáveis, como a função ActionButton, responsável por encapsular a aparência e comportamento dos botões.
 Por fim, a camada de lógica de registro implementa chamadas como Log.d, Log.i, Log.w e Log.e, permitindo a comunicação direta com o desenvolvedor durante a execução do aplicativo.
+ <img width="621" height="671" alt="image" src="https://github.com/user-attachments/assets/6d2fdf8b-3240-4ebe-b383-209bb9637c42" />
