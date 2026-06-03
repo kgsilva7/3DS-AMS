@@ -40,43 +40,29 @@ class MainActivity : ComponentActivity() {
 fun HardwareMaintenanceScreen() {
     var equipamento by remember { mutableStateOf("") }
     var problema by remember { mutableStateOf("") }
-    var maintenanceList by remember {
-        mutableStateOf(
-            listOf(
-                MaintenanceItem(
-                    1,
-                    "Notebook Dell",
-                    "Superaquecimento",
-                    "Em análise"
-                ),
-                MaintenanceItem(
-                    2,
-                    "PC Gamer",
-                    "Fonte queimada",
-                    "Concluído"
-                )
-            )
+    val maintenanceList = remember {
+        mutableStateListOf(
+            MaintenanceItem(1, "Notebook Dell", "Superaquecimento", "Em análise"),
+            MaintenanceItem(2, "PC Gamer", "Fonte queimada", "Concluído")
         )
     }
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Text("Manutenção de Hardware")
-                }
+                title = { Text("Manutenção de Hardware") }
             )
         },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    if (equipamento.isNotEmpty() && problema.isNotEmpty()) {
+                    if (equipamento.isNotBlank() && problema.isNotBlank()) {
                         val novoItem = MaintenanceItem(
                             id = maintenanceList.size + 1,
-                            equipamento = equipamento,
-                            problema = problema,
+                            equipamento = equipamento.trim(),
+                            problema = problema.trim(),
                             status = "Pendente"
                         )
-                        maintenanceList = maintenanceList + novoItem
+                        maintenanceList.add(novoItem)
                         equipamento = ""
                         problema = ""
                     }
@@ -113,9 +99,13 @@ fun HardwareMaintenanceScreen() {
             )
             Spacer(modifier = Modifier.height(12.dp))
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                modifier = Modifier.fillMaxSize()
             ) {
-                items(maintenanceList) { item ->
+                items(
+                    items = maintenanceList,
+                    key = { it.id }
+                ) { item ->
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         elevation = CardDefaults.cardElevation(4.dp)
