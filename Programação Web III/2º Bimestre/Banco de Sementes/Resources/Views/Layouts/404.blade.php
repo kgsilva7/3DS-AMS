@@ -1,0 +1,11 @@
+@extends('layouts.app')
+
+@section('content')
+
+<h1>Erro 404</h1>
+
+<p>Página não encontrada.</p>
+
+<a href="/">Voltar para Home</a>
+
+@endsection
