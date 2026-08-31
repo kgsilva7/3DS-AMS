@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Artefatos Arqueológicos</string>
+    <string name="login">Login</string>
+    <string name="signup">Cadastrar</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="nome">Nome</string>
+</resources>
