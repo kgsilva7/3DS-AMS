@@ -1,4 +1,11 @@
 <?php return array (
+  'laravel/breeze' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
+    ),
+  ),
   'laravel/pail' => 
   array (
     'providers' => 
@@ -18,6 +25,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'munafio/chatify' => 
+  array (
+    'aliases' => 
+    array (
+      'Chatify' => 'Chatify\\Facades\\ChatifyMessenger',
+    ),
+    'providers' => 
+    array (
+      0 => 'Chatify\\ChatifyServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
