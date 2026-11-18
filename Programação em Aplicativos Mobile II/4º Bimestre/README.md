@@ -48,5 +48,8 @@ geo-to-do-pam2/
 ```
 ---
 
-Gustavo Alexandre da Silva, Igor Sales Moreira, Higor Mota de Oliveira e Felipe Gabriel Tesser
+## Gustavo Alexandre da Silva
+## Igor Sales Moreira
+## Higor Mota de Oliveira
+## Felipe Gabriel Tesser
 Desenvolvido para fins acadêmicos na disciplina de PAM II.
